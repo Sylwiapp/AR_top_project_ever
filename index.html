@@ -18,8 +18,28 @@
         <a-entity gltf-model="#wiking" scale="0.5 0.5 0.5" animation-mixer></a-entity>
         <!-- Dodaj efekty wizualne -->
         <a-entity particle-system="preset: dust; particleCount: 2000; color: #FF5733"></a-entity>
+         <!-- Dodaj komponent text dla napisu -->
+      <a-entity id="label" text="value: Kliknij, aby wyświetlić tekst; align: center; width: 6;"></a-entity>
+    </a-marker>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+    <script>
+      // Dodajemy obsługę kliknięcia na markerze
+      AFRAME.registerComponent('markerhandler', {
+        init: function () {
+          var marker = this.el;  // Zapisujemy referencję do markeru
+  
+          // Nasłuchujemy zdarzenia 'click' na markerze
+          marker.addEventListener('click', function () {
+            var label = document.querySelector('#label');
+            label.setAttribute('text', 'value', 'Tekst do wyświetlenia');
+          });
+        }
+      });
+  
+      // Przypisujemy komponent do marker-a
+      document.querySelector('a-marker').setAttribute('markerhandler', '');
+    </script>
   </body>
 </html>
