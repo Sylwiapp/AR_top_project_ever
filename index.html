@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WebAR Gdańsk</title>
+    <title>AR Experience with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <!-- AR.js Scene -->
-    <a-scene embedded arjs>
-      <!-- Marker -->
-      <a-marker preset="custom" type="pattern" url="marker.patt">
-        <!-- Obiekt 3D (kostka) -->
-        <a-box position="0 0.5 0" material="color: yellow;"></a-box>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      <!-- Kamera AR -->
+      <a-marker preset="hiro">
+        <!-- Dodaj model 3D -->
+        <a-entity gltf-model="url(wiking.glb)" scale="0.5 0.5 0.5" animation-mixer></a-entity>
+        <!-- Dodaj efekty wizualne -->
+        <a-entity particle-system="preset: dust; particleCount: 2000; color: #FF5733"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
