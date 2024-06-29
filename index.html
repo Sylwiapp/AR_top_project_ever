@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AR.js A-Frame Location-based</title>
-<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+    <title>AR.js A-Frame Location-based</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
-<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-    <!-- Load assets -->
-    <a-assets>
-        <a-asset-item id="gltf-model" src="wizz.gltf"></a-asset-item>
-    </a-assets>
+    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false">
+        <!-- Load assets -->
+        <a-assets>
+            <a-asset-item id="gltf-model" src="wizz.gltf"></a-asset-item>
+        </a-assets>
 
-    <a-camera gps-new-camera='gpsMinDistance: 1'></a-camera>
-    <!-- Use GLTF model -->
-    <a-entity gltf-model="#gltf-model" gps-new-entity-place="latitude: 54.350408; longitude: 18.644998" scale="0.2 0.2 0.2"  animation="property: position; to: 0 100 0; dur: 5000; easing: linear; loop: true">
-
-    </a-entity>
-</a-scene>
+        <a-camera gps-camera="gpsMinDistance: 1"></a-camera>
+        
+        <!-- Use GLTF model -->
+        <a-entity gltf-model="#gltf-model"
+                  gps-entity-place="latitude: 54.350408; longitude: 18.644998"
+                  scale="0.2 0.2 0.2"
+                  animation__position="property: position; to: 0 100 0; dur: 5000; easing: linear; loop: true">
+        </a-entity>
+    </a-scene>
 </body>
 </html>
