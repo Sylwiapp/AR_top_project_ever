@@ -10,12 +10,11 @@
 <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     <!-- Load assets -->
     <a-assets>
-        <a-asset-item id="gltf-model" src="scene.gltf"></a-asset-item>
+        <a-asset-item id="gltf-model" src="wizz.gltf"></a-asset-item>
     </a-assets>
 
     <a-camera gps-new-camera='gpsMinDistance: 1'></a-camera>
     <!-- Use GLTF model -->
-    <a-entity gltf-model="#gltf-model" gps-new-entity-place="latitude: 54.350409; longitude: 18.644998" scale="0.2 0.2 0.2"></a-entity>
     <a-entity gltf-model="#gltf-model" gps-new-entity-place="latitude: 54.350408; longitude: 18.644998" scale="0.2 0.2 0.2"></a-entity>
 </a-scene>
 </body>
