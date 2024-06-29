@@ -56,7 +56,7 @@
                 // Point A (starting point)
                 const pointA = { latitude: 54.3505405, longitude: 18.6449052 };
                 // Point B (destination point)
-                const pointB = { latitude: 54.3504602, longitude: 18.6450930 }; // Change these values to the desired destination
+                const pointB = { latitude: 54.3505116, longitude: 18.6450434 }; // Change these values to the desired destination
 
                 // Update the model position to point A
                 model.setAttribute('gps-entity-place', `latitude: ${pointA.latitude}; longitude: ${pointA.longitude}`);
@@ -66,7 +66,7 @@
                     model.setAttribute('animation', {
                         property: 'gps-entity-place',
                         to: `latitude: ${pointB.latitude}; longitude: ${pointB.longitude}`,
-                        dur: 5000,  // Duration of the animation in milliseconds
+                        dur: 10000,  // Duration of the animation in milliseconds
                         easing: 'linear',
                         loop: false
                     });
