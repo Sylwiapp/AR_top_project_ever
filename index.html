@@ -10,14 +10,17 @@
     <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false">
         <!-- Load assets -->
         <a-assets>
-            <a-asset-item id="gltf-model" src="wizz.gltf"></a-asset-item>
+            <a-asset-item id="gltf-model" src="samolot.gltf"></a-asset-item>
         </a-assets>
+
         <a-camera gps-camera="gpsMinDistance: 1"></a-camera>
         
-        <!-- Use GLTF model -->
+        <!-- Use GLTF model with customized animation -->
         <a-entity gltf-model="#gltf-model"
                   gps-entity-place="latitude: 54.350408; longitude: 18.644998"
-                  scale="0.2 0.2 0.2">
+                  scale="0.1 0.1 0.1"
+                  position="0 5 -10"
+                  animation="property: position; to: -20 5 -10; dur: 20000; easing: linear; loop: true">
         </a-entity>
     </a-scene>
 </body>
