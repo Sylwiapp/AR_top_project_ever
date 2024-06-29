@@ -12,16 +12,13 @@
         <a-assets>
             <a-asset-item id="gltf-model" src="wizz.gltf"></a-asset-item>
         </a-assets>
-
         <a-camera gps-camera="gpsMinDistance: 1"></a-camera>
-
-        <!-- Use GLTF model with simple animation -->
+        
+        <!-- Use GLTF model -->
         <a-entity gltf-model="#gltf-model"
                   gps-entity-place="latitude: 54.350408; longitude: 18.644998"
-                  scale="0.15 0.15 0.15"
-                  animation="property: position; to: 0 1 0; dur: 2000; easing: linear; loop: true">
+                  scale="0.2 0.2 0.2">
         </a-entity>
     </a-scene>
 </body>
-
 </html>
