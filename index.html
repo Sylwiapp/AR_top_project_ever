@@ -15,7 +15,9 @@
 
     <a-camera gps-new-camera='gpsMinDistance: 1'></a-camera>
     <!-- Use GLTF model -->
-    <a-entity gltf-model="#gltf-model" gps-new-entity-place="latitude: 54.350408; longitude: 18.644998" scale="0.2 0.2 0.2"></a-entity>
+    <a-entity gltf-model="#gltf-model" gps-new-entity-place="latitude: 54.350408; longitude: 18.644998" scale="0.2 0.2 0.2"  animation="property: position; to: 0 100 0; dur: 5000; easing: linear; loop: true">
+
+    </a-entity>
 </a-scene>
 </body>
 </html>
